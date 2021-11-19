@@ -1,0 +1,26 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    gap: 0px;
+    height: 480px;
+    width: 480px;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+}
+
+.grid-item {
+    height: 30px;
+    width: 30px;
+    background-color: crimson;
+    box-sizing: border-box;
+    border-right: black 1px solid;
+    border-bottom: black 1px solid;
+}
