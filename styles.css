@@ -5,20 +5,21 @@
     gap: 100px;
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(16, auto);
-    grid-template-rows: repeat(16, auto);
     gap: 0px;
-    height: 480px;
-    width: 480px;
+    height: 640px;
+    width: 640px;
     border-top: black 1px solid;
     border-left: black 1px solid;
 }
 
 .grid-item {
-    height: 30px;
-    width: 30px;
     background-color: crimson;
     box-sizing: border-box;
     border-right: black 1px solid;
