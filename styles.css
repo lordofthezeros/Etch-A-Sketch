@@ -1,3 +1,9 @@
+.heading h1 {
+    font-family: 'VT323', monospace;
+    font-size: 72px;
+    text-align: center;
+}
+
 .content {
     display: flex;
     justify-content: center;
@@ -8,20 +14,21 @@
 .controls {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 25px;
 }
 
 .grid-container {
+    box-sizing: border-box;
     display: grid;
     gap: 0px;
-    height: 640px;
-    width: 640px;
-    border-top: black 1px solid;
-    border-left: black 1px solid;
+    height: 480px;
+    width: 480px;
+    background-color: #EBECF0;
+    border: black 10px solid;
 }
 
 .grid-item {
-    background-color: crimson;
     box-sizing: border-box;
-    border-right: black 1px solid;
-    border-bottom: black 1px solid;
 }
+

@@ -1,10 +1,12 @@
 const gridContainer = document.querySelector('.grid-container');
+const blackAndWhiteButton = document.querySelector('.black-and-white');
+const rainbowButton = document.querySelector('.rainbow');
 const resetButton = document.querySelector('.reset-grid');
 const resizeButton = document.querySelector('.resize-grid');
 const slider = document.getElementById('grid-dims');
 let output = document.getElementById('grid-dim-value');
 
-
+let currentMode = 'classic';
 
 output.textContent = `${slider.value} x ${slider.value}`;
 
@@ -15,7 +17,12 @@ slider.oninput = function () {
 const DEFAULTGRIDSIZE = 16;
 
 function changeColour(e) {
-    e.target.style.cssText = 'background-color: blue';
+    if (currentMode === "classic") {
+    e.target.style.cssText = 'background-color: #bebebe';
+    } else if (currentMode === 'rainbow') {
+        const randomColour = Math.floor(Math.random() *16777215).toString(16);
+        e.target.style.backgroundColor = `#${randomColour}`;
+    }
 }
 
 function clear() {
@@ -26,6 +33,7 @@ function resetScreen() {
     clear();
     slider.value = slider.defaultValue;
     output.textContent = `${slider.value} x ${slider.value}`;
+    currentMode = 'black-and-white';
     setGrid(DEFAULTGRIDSIZE);
 }
 
@@ -49,5 +57,11 @@ function setGrid(currentSize) {
 
 resetButton.onclick = () => resetScreen();
 resizeButton.onclick = () => resizeScreen();
+blackAndWhiteButton.onclick = () => {
+    currentMode = 'classic';
+}
+rainbowButton.onclick = () => {
+    currentMode = 'rainbow';
+}
 
 window.onload = () => setGrid(DEFAULTGRIDSIZE);
