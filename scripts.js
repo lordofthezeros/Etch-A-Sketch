@@ -33,7 +33,7 @@ function resetScreen() {
     clear();
     slider.value = slider.defaultValue;
     output.textContent = `${slider.value} x ${slider.value}`;
-    currentMode = 'black-and-white';
+    currentMode = 'classic';
     setGrid(DEFAULTGRIDSIZE);
 }
 
